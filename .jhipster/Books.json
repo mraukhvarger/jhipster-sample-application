@@ -1,0 +1,39 @@
+{
+    "name": "Books",
+    "fields": [
+        {
+            "fieldName": "bookName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "genres",
+            "otherEntityRelationshipName": "books",
+            "relationshipName": "genre"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "authors",
+            "otherEntityRelationshipName": "book",
+            "relationshipName": "author",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191227123426",
+    "entityTableName": "books",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "SampleServiceJHipster",
+    "applications": "*",
+    "microserviceName": "SampleServiceJHipster"
+}
