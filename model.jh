@@ -1,0 +1,33 @@
+entity Authors {
+	authorName String required
+}
+
+entity Books {
+	bookName String required
+}
+
+entity Genres {
+	genreName String required
+}
+
+relationship OneToMany {
+	Books{genre} to Genres
+}
+
+relationship ManyToMany {
+	Authors{book(bookName)} to Books{author}
+}
+
+
+// Set pagination options
+paginate Authors, Books with infinite-scroll
+paginate Genres with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
