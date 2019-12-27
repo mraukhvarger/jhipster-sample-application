@@ -1,0 +1,32 @@
+{
+    "name": "Genres",
+    "fields": [
+        {
+            "fieldName": "genreName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "books",
+            "otherEntityRelationshipName": "genre",
+            "relationshipName": "books",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191227123427",
+    "entityTableName": "genres",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "SampleServiceJHipster",
+    "applications": "*",
+    "microserviceName": "SampleServiceJHipster"
+}
